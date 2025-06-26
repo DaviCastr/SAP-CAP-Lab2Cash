@@ -1,0 +1,239 @@
+@server=http://localhost:4004
+
+
+@server=http://localhost:4004
+
+### Wallets
+# @name Wallets_GET
+GET {{server}}/main/Wallets?$expand=customer
+
+### Parameters
+# @name Wallets_GET_Parameters
+GET {{server}}/main/Parameters
+
+###
+# @name Wallets_GET_Parameters_Details
+GET {{server}}/main/getParameters
+
+### Update Parameters
+# @name Wallets_POST_UpdateParameters
+POST {{server}}/main/updateParameters
+Content-Type: application/json
+
+{
+ "parameters": {
+    "is_cashback_active": false,
+    "cashback_return": 20.35,
+    "cashback_redemption_limit": 50
+ }
+}
+
+### A_SalesOrder
+# @name A_SalesOrder_GET
+GET {{server}}/main/A_SalesOrder?$top=1&&$expand=to_Item
+
+
+
+### A_SalesOrder
+# @name A_SalesOrder_POST
+POST {{server}}/main/A_SalesOrder
+Content-Type: application/json
+
+{
+  "SalesOrderType": "OR",
+  "SoldToParty": "USCU_502",
+  "PurchaseOrderByCustomer": "101",
+  "TotalNetAmount": 1000.00, 
+  "to_Item":[
+    {
+        "SalesOrderItem": "1",
+        "Material": "EWMS7-01",
+        "RequestedQuantity": "100",
+        "RequestedQuantityUnit": "PC"
+    }
+  ],
+  "Order":{
+    "applied_cashback": 0
+  }
+}
+
+
+### A_SalesOrder
+# @name A_SalesOrder_PATCH
+PATCH {{server}}/main/A_SalesOrder/rder-87105
+Content-Type: application/json
+
+{
+  "SalesOrder": "rder-87105",
+  "SalesOrderType": "7105",
+  "SalesOrganization": "7105",
+  "DistributionChannel": "05",
+  "OrganizationDivision": "05",
+  "SalesGroup": "105",
+  "SalesOffice": "7105",
+  "SalesDistrict": "-87105",
+  "SoldToParty": "arty-87105",
+  "CreationDate": "2002-04-09",
+  "CreatedByUser": "ByUser-87105",
+  "LastChangeDate": "2022-12-31",
+  "LastChangeDateTime": "2007-03-30T00:00:00.000Z",
+  "PurchaseOrderByCustomer": "PurchaseOrderByCustomer-87105",
+  "CustomerPurchaseOrderType": "7105",
+  "CustomerPurchaseOrderDate": "2019-04-09",
+  "SalesOrderDate": "2007-10-29",
+  "TotalNetAmount": 17560962.168,
+  "TransactionCurrency": "87105",
+  "SDDocumentReason": "105",
+  "PricingDate": "2022-01-07",
+  "RequestedDeliveryDate": "2003-12-26",
+  "ShippingCondition": "05",
+  "CompleteDeliveryIsDefined": false,
+  "ShippingType": "05",
+  "HeaderBillingBlockReason": "05",
+  "DeliveryBlockReason": "05",
+  "IncotermsClassification": "105",
+  "IncotermsTransferLocation": "otermsTransferLocation-87105",
+  "IncotermsLocation1": "IncotermsLocation1-87105",
+  "IncotermsLocation2": "IncotermsLocation2-87105",
+  "IncotermsVersion": "7105",
+  "CustomerPaymentTerms": "7105",
+  "PaymentMethod": "5",
+  "AssignmentReference": "entReference-87105",
+  "ReferenceSDDocument": "ment-87105",
+  "ReferenceSDDocumentCategory": "7105",
+  "CustomerTaxClassification1": "5",
+  "TaxDepartureCountry": "105",
+  "VATRegistrationCountry": "105",
+  "SalesOrderApprovalReason": "7105",
+  "SalesDocApprovalStatus": "5",
+  "OverallSDProcessStatus": "5",
+  "TotalCreditCheckStatus": "5",
+  "OverallTotalDeliveryStatus": "5",
+  "OverallSDDocumentRejectionSts": "5"
+}
+
+
+### A_SalesOrder
+# @name A_SalesOrder_DELETE
+DELETE {{server}}/odata/v4/lab2-cash-proxy/A_SalesOrder/rder-87105
+Content-Type: application/json
+
+
+### A_SalesOrderItem
+# @name A_SalesOrderItem_GET
+GET {{server}}/odata/v4/lab2-cash-proxy/A_SalesOrderItem
+
+
+
+### A_SalesOrderItem
+# @name A_SalesOrderItem_POST
+POST {{server}}/odata/v4/lab2-cash-proxy/A_SalesOrderItem
+Content-Type: application/json
+
+{
+  "SalesOrder": "m-24321454",
+  "SalesOrderItem": "321454",
+  "HigherLevelItem": "321454",
+  "SalesOrderItemCategory": "1454",
+  "SalesOrderItemText": "SalesOrderItemText-24321454",
+  "PurchaseOrderByCustomer": "PurchaseOrderByCustomer-24321454",
+  "Material": "Material-24321454",
+  "MaterialByCustomer": "MaterialByCustomer-24321454",
+  "PricingDate": "2019-04-11",
+  "RequestedQuantity": 6012855.194,
+  "RequestedQuantityUnit": "454",
+  "ItemGrossWeight": 2262402.217,
+  "ItemNetWeight": 26116077.221,
+  "ItemWeightUnit": "454",
+  "ItemVolume": 6379409.809,
+  "ItemVolumeUnit": "454",
+  "TransactionCurrency": "21454",
+  "NetAmount": 23962709.317,
+  "MaterialGroup": "-24321454",
+  "MaterialPricingGroup": "54",
+  "Batch": "h-24321454",
+  "ProductionPlant": "1454",
+  "StorageLocation": "1454",
+  "DeliveryGroup": "454",
+  "ShippingPoint": "1454",
+  "ShippingType": "54",
+  "DeliveryPriority": "54",
+  "IncotermsClassification": "454",
+  "IncotermsTransferLocation": "rmsTransferLocation-24321454",
+  "IncotermsLocation1": "IncotermsLocation1-24321454",
+  "IncotermsLocation2": "IncotermsLocation2-24321454",
+  "CustomerPaymentTerms": "1454",
+  "SalesDocumentRjcnReason": "54",
+  "ItemBillingBlockReason": "54",
+  "WBSElement": "WBSElement-24321454",
+  "ProfitCenter": "r-24321454",
+  "ReferenceSDDocument": "t-24321454",
+  "ReferenceSDDocumentItem": "321454",
+  "SDProcessStatus": "4",
+  "DeliveryStatus": "4",
+  "OrderRelatedBillingStatus": "4",
+  "RequirementSegment": "RequirementSegment-24321454",
+  "to_SalesOrder": {
+    "SalesOrder": "rder-87105"
+  }
+}
+
+
+### A_SalesOrderItem
+# @name A_SalesOrderItem_PATCH
+PATCH {{server}}/odata/v4/lab2-cash-proxy/A_SalesOrderItem(SalesOrder='m-24321454',SalesOrderItem='321454')
+Content-Type: application/json
+
+{
+  "SalesOrder": "m-24321454",
+  "SalesOrderItem": "321454",
+  "HigherLevelItem": "321454",
+  "SalesOrderItemCategory": "1454",
+  "SalesOrderItemText": "SalesOrderItemText-24321454",
+  "PurchaseOrderByCustomer": "PurchaseOrderByCustomer-24321454",
+  "Material": "Material-24321454",
+  "MaterialByCustomer": "MaterialByCustomer-24321454",
+  "PricingDate": "2019-04-11",
+  "RequestedQuantity": 6012855.194,
+  "RequestedQuantityUnit": "454",
+  "ItemGrossWeight": 2262402.217,
+  "ItemNetWeight": 26116077.221,
+  "ItemWeightUnit": "454",
+  "ItemVolume": 6379409.809,
+  "ItemVolumeUnit": "454",
+  "TransactionCurrency": "21454",
+  "NetAmount": 23962709.317,
+  "MaterialGroup": "-24321454",
+  "MaterialPricingGroup": "54",
+  "Batch": "h-24321454",
+  "ProductionPlant": "1454",
+  "StorageLocation": "1454",
+  "DeliveryGroup": "454",
+  "ShippingPoint": "1454",
+  "ShippingType": "54",
+  "DeliveryPriority": "54",
+  "IncotermsClassification": "454",
+  "IncotermsTransferLocation": "rmsTransferLocation-24321454",
+  "IncotermsLocation1": "IncotermsLocation1-24321454",
+  "IncotermsLocation2": "IncotermsLocation2-24321454",
+  "CustomerPaymentTerms": "1454",
+  "SalesDocumentRjcnReason": "54",
+  "ItemBillingBlockReason": "54",
+  "WBSElement": "WBSElement-24321454",
+  "ProfitCenter": "r-24321454",
+  "ReferenceSDDocument": "t-24321454",
+  "ReferenceSDDocumentItem": "321454",
+  "SDProcessStatus": "4",
+  "DeliveryStatus": "4",
+  "OrderRelatedBillingStatus": "4",
+  "RequirementSegment": "RequirementSegment-24321454",
+  "to_SalesOrder": {
+    "SalesOrder": "rder-87105"
+  }
+}
+
+
+### A_SalesOrderItem
+# @name A_SalesOrderItem_DELETE
+DELETE {{server}}/odata/v4/lab2-cash-proxy/A_SalesOrderItem(SalesOrder='m-24321454',SalesOrderItem='321454')
+Content-Type: application/json
